@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valyuta Konvertoru</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo"> <img src="bank-a.png" alt="Bank Logo" class="logo-image"></div>
+            <!-- <div class="logo">bank <span>a</span></div> -->
+            <div class="nav-item">BANK</div>
+            <div class="nav-item">BIZNES</div>
+            <div class="nav-item">FƏRDİ</div>
+            <div class="nav-item">KART</div>
+            <div class="nav-item">ONLİNE</div>
+            <div>
+                <button class="login-btn">LOGİN</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Valyuta dəyişdir</h1>
+        
+        <div class="converter-container">
+            <div class="column">
+                <p>Daxil et/Dəyiş</p>
+                <div class="currency-tabs" id="from-tabs">
+                    <button class="active">RUB</button>
+                    <button>USD</button>
+                    <button>EUR</button>
+                    <button>GBP</button>
+                </div>
+                <div class="input-card">
+                    <input type="text" id="from-input">
+                    <span class="rate-info" id="from-rate-info">1 RUB = ...</span>
+                </div>
+            </div>
+
+            <div class="column">
+                <p>Daxil et/Dəyiş</p>
+                <div class="currency-tabs" id="to-tabs">
+                    <button>RUB</button>
+                    <button class="active">USD</button>
+                    <button>EUR</button>
+                    <button>GBP</button>
+                </div>
+                <div class="input-card">
+                    <input type="text" id="to-input">
+                    <span class="rate-info" id="to-rate-info">1 USD = ...</span>
+                </div>
+            </div>
+
+            <div class="column">
+                <p>Hansı bank?</p>
+                <div class="bank-tabs" id="bank-tabs">
+                    <button>ABC</button>
+                    <button class="active">NEW</button>
+                    <button>AME</button>
+                    <button>RED</button>
+                </div>
+                <div class="result-cards">
+                    <div class="result-item">
+                        <div class="label">BUY</div>
+                        <div class="value" id="buy-value">0.00</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="label">SELL</div>
+                        <div class="value" id="sell-value">0.00</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="offline-notification" class="offline-notification">
+        Halı hazırda internet işləmir!
+    </div>
+
+    <script src="scr.js"></script>
+</body>
+</html>

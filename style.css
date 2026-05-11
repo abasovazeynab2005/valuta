@@ -1,0 +1,188 @@
+/* 1. Базовые настройки */
+* {
+    box-sizing: border-box; 
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    background-color: #fcfcfc;
+}
+
+/* 2. Header и Навигация (НЕ ТРОГАЕМ, оставляем в линию) */
+header {
+    background-color: #d6caca; /* Твой оригинальный цвет */
+    width: 100%;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around; /* Как было у тебя */
+    align-items: center;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #eee;
+}
+
+.logo-image {
+    height: 35px;
+    width: auto;
+}
+
+.nav-item {
+    display: inline-block;
+    margin: 0 10px;
+    font-size: 14px;
+    color: #333;
+}
+
+.login-btn {
+    padding: 10px 20px;
+    background-color: #ffffff;
+    color: #000;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* 3. Основной контент */
+main {
+    padding: 40px 50px;
+}
+
+h1 {
+    margin-bottom: 30px;
+    font-size: 32px;
+}
+
+.converter-container { 
+    display: flex;
+    gap: 20px; 
+    flex-wrap: wrap; /* Разрешаем колонкам прыгать вниз */
+}
+
+/* 4. Колонки */
+.column {
+    flex: 1;
+    min-width: 300px; /* Порог, после которого колонка уйдет вниз */
+}
+
+/* 5. Компоненты */
+.currency-tabs, .bank-tabs { 
+    display: flex;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px; 
+    overflow: hidden;
+    margin-bottom: 15px;
+    background: #fff;
+}
+
+.currency-tabs button, .bank-tabs button { 
+    flex: 1;
+    padding: 12px;
+    border: none; 
+    background: none;
+    color: #b0b0b0; 
+    cursor: pointer; 
+    border-right: 1px solid #eee;
+}
+
+.currency-tabs button:last-child, .bank-tabs button:last-child { 
+    border-right: none; 
+}
+
+.currency-tabs button.active, .bank-tabs button.active {
+    background-color: #833ae0;
+    color: white;
+}
+
+.input-card { 
+    border: 1px solid #e0e0e0;
+    padding: 25px; 
+    background: #fff; 
+    border-radius: 4px; 
+    min-height: 150px;
+}
+
+input { 
+    width: 100%;
+    border: none; 
+    font-size: 40px;
+    font-weight: bold;
+    outline: none; 
+}
+
+.rate-info { 
+    color: #b0b0b0;
+    font-size: 13px;
+    display: block;
+    margin-top: 15px; 
+}
+
+/* 6. Результаты */
+.result-item { 
+    display: flex; 
+    align-items: center; 
+    border: 1px solid #e0e0e0;
+    margin-bottom: 15px;
+    background: #fff;
+    height: 100px;
+    border-radius: 4px;
+    overflow: hidden; 
+}
+
+.label { 
+    background: #833ae0; 
+    color: white; 
+    width: 80px; 
+    height: 100%; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold; 
+}
+
+.value { 
+    font-size: 32px;
+    font-weight: bold;
+    padding-left: 20px;
+}
+
+/* 7. МЕДИА-ЗАПРОСЫ (Только для контента) */
+
+/* ПЛАНШЕТ (601px - 991px) */
+@media (max-width: 991px) {
+    .column {
+        flex: 1 1 45%; /* Две колонки в ряд */
+    }
+}
+
+/* ТЕЛЕФОН (375px - 600px) */
+@media (max-width: 600px) {
+    main {
+        padding: 20px 15px;
+    }
+    .column {
+        flex: 1 1 100%; /* Колонки одна под другой */
+    }
+    h1 {
+        font-size: 24px;
+    }
+    input {
+        font-size: 32px;
+    }
+}
+
+/* 8. Уведомление */
+.offline-notification {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #ff4d4d;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 8px;
+    display: none;
+    z-index: 1000;
+}
